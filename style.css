@@ -9,16 +9,19 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    height: 100vh;
+    margin: 0;
 }
 
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, #1E90FF, #333333);
+    background: linear-gradient(135deg, #1E90FF 0%, #333333 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
+    z-index: 0;
 }
 
 .hero-content {
@@ -34,15 +37,22 @@ h1 {
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Réduit pour mieux s’intégrer */
     font-weight: 400;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 #neural-network {
     width: 300px;
     height: 300px;
     margin: 0 auto 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
 
 .summary {
@@ -73,9 +83,7 @@ h2 {
     color: #fff;
     transform: translateY(-3px);
 }
-/* ... (le reste du CSS reste inchangé) */
 
-/* Style du footer */
 .footer {
     background-color: #333;
     padding: 1rem;
@@ -84,12 +92,13 @@ h2 {
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 2;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
     margin-bottom: 0.5rem;
 }
 
