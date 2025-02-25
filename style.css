@@ -9,12 +9,14 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    height: 100vh;
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .hero {
-    height: 100vh;
+    flex: 1;
     background: linear-gradient(135deg, #1E90FF 0%, #333333 100%);
     display: flex;
     justify-content: center;
@@ -28,18 +30,30 @@ body {
     text-align: center;
     color: #fff;
     z-index: 1;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: 1.5rem; /* Réduit pour mieux s’intégrer */
+    font-size: 1.8rem;
     font-weight: 400;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 #neural-network {
@@ -51,12 +65,14 @@ h2 {
 }
 
 .hero-content p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
 .summary {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 500;
     max-width: 600px;
     margin: 0 auto 2rem;
 }
@@ -89,10 +105,7 @@ h2 {
     padding: 1rem;
     text-align: center;
     color: #fff;
-    position: fixed;
-    bottom: 0;
     width: 100%;
-    z-index: 2;
 }
 
 .social-links {
@@ -115,4 +128,81 @@ h2 {
 
 .footer p {
     font-size: 0.9rem;
+}
+/* Styles Généraux */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header des pages */
+.page-header {
+    background: linear-gradient(135deg, #1E90FF 0%, #333333 100%);
+    padding: 50px 20px;
+    color: white;
+    border-radius: 0 0 50px 50px;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1E90FF;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+/* Listes de projets et contacts */
+.project-list, .contact-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.project-list li, .contact-list li {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-list li:hover, .contact-list li:hover {
+    transform: translateY(-5px);
+}
+
+.project-link, .contact-link {
+    color: #1E90FF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-link:hover, .contact-link:hover {
+    text-decoration: underline;
+}
+
+/* Animation fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
 }

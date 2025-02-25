@@ -17,7 +17,7 @@ function setup() {
 }
 
 function draw() {
-    clear(); // Fond transparent pour voir le dégradé
+    clear();
     strokeWeight(1);
     for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
@@ -41,3 +41,15 @@ function draw() {
         if (node.y < 20 || node.y > height - 20) node.dy *= -1;
     }
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.5 });
+
+    elements.forEach(el => observer.observe(el));
+});
